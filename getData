@@ -13,8 +13,8 @@ class getData():
     def getData(self, symbol: str):
         path = self.folder + symbol + self.csv
         try:
-            df = pd.read_csv(path)
-            return(df)
+            return(pd.read_csv(path))
+        
         except:
             # This is jank, trying to return path + '\n' + "..." was acting up so did this instead
             print(path)
