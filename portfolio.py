@@ -1,3 +1,6 @@
+import os
+print(os.listdir())
+
 class Portfolio():
     def __init__(self, cash=0):
         self.positions = {}
@@ -19,11 +22,13 @@ class Portfolio():
             self.positions[symbol]['quantity'] = 0
             # Fix the asset type permanently
             self.positions[symbol]['asset_type'] = asset_type #Perhaps make this argument optional since it only gets used for the first position on the symbol
+            self.positions[symbol]['ID'] = []
             # Create lists for purchase price/date so we can graph and track our trades over the course of a backtest
             self.positions[symbol]['purchase_price'] = []
             self.positions[symbol]['purchase_date'] = []
             
         # No else as we did not add the quantity/purchase info if there was a setup
+        #self.positions[symbol]['ID'].append(Order())
         self.positions[symbol]['quantity'] += quantity 
         self.positions[symbol]['purchase_price'].append(purchase_price)
         self.positions[symbol]['purchase_date'].append(purchase_date)

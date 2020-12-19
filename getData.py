@@ -2,7 +2,7 @@ import pandas as pd
 
 class getData():
     def __init__(self):
-        self.folder = "data//"
+        self.folder = "data//" #Assumes getData.py is in the same directory as data
         self.csv = ".csv"
 
     # Allows you to set path getData looks for the file in
